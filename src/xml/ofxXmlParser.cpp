@@ -26,6 +26,12 @@ bool ofxXmlParser::load(const string& xmlFile) {
     return isLoaded;
 }
 
+
+void ofxXmlParser::unload() {
+    
+    file.clear();
+}
+
 vector<string> ofxXmlParser::getTagList(string tagName, string _root) {
     vector<string> list;
     
@@ -79,4 +85,20 @@ vector<string> ofxXmlParser::getAttrList(string tagName, string attrName, string
     
     file.popTag();
     return list;
+}
+
+string ofxXmlParser::get(string tagName, string _root) {
+    
+    // Returns the first value of the taglist
+    // Suitable for settings xmls
+    //if(isLoaded) {
+    file.pushTag(_root);
+    string req = file.getValue(tagName, "noValueProvided",0);
+    file.popTag();
+    
+    return req;
+    
+    //}
+    
+    
 }

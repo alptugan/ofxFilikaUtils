@@ -23,6 +23,10 @@ public:
     bool load(const string& xmlFile);
     vector<string> getTagList(string tagName, string _root = "root");
     vector<string> getAttrList(string tagName, string attrName,string _root = "root");
+    string get(string tagName, string _root = "root");
+    
+    
+    void unload();
     ofxXmlSettings file;
     bool isLoaded;
 };
