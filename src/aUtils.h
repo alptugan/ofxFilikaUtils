@@ -88,7 +88,7 @@ static vector <string> getStringNodeList(string nodeName) {
         
         //skores.push_back(v);
         fileNames.push_back(s);
-        cout << "Image list : " << s << endl;
+        //cout << "Image list : " << s << endl;
     }
     
 
